@@ -1,0 +1,157 @@
+.mainproperties {
+  background-color: rgb(208, 205, 205);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.header {
+  display: grid;
+  align-content: center;
+  padding: 1em;
+}
+
+.gridcontainer {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "main aside";
+}
+
+.main {
+  background-color: rgb(252, 243, 221);
+  grid-area: main;
+  display: grid;
+  min-height: 30vh;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr 1fr;
+  grid-template-areas:
+    "text text"
+    "firsttext secondtext"
+    "thirdtext thirdtext";
+}
+
+.text {
+  grid-area: text;
+  padding: 1em;
+}
+
+.first__text {
+  background-color: rgb(248, 226, 170);
+  display: grid;
+  grid-area: firsttext;
+  align-content: center;
+  min-height: 50px;
+  margin: 0.5em;
+}
+
+.second__text {
+  background-color: rgb(248, 226, 170);
+  display: grid;
+  grid-area: secondtext;
+  align-content: center;
+  min-height: 50px;
+  margin: 0.5em;
+}
+
+.third__text {
+  background-color: rgb(248, 226, 170);
+  display: grid;
+  grid-area: thirdtext;
+  align-content: center;
+  min-height: 50px;
+  margin: 0.5em;
+}
+.aside {
+  background-color: rgb(214, 230, 182);
+  grid-area: aside;
+  padding: 2em;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  margin: 1em;
+}
+
+footer > p {
+  background-color: white;
+  display: grid;
+  align-content: center;
+  min-height: 20%;
+  padding: 1em;
+  margin: 1em;
+}
+
+@media screen and (max-width: 1024px) {
+  .mainproperties {
+    font-size: 2rem;
+  }
+
+  .gridcontainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 1fr;
+    grid-template-areas:
+      "main"
+      "aside";
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gridcontainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 1fr;
+    grid-template-areas:
+      "main"
+      "aside";
+  }
+
+  .footer {
+    font-size: 1.2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "text"
+      "firsttext"
+      "secondtext"
+      "thirdtext";
+  }
+
+  .text {
+    padding: 0px;
+  }
+
+  .footer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .footer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .footer {
+    display: none;
+  }
+}
